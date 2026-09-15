@@ -15,7 +15,7 @@ const beneficios = [
   {
     Icono: IconoUbicacion,
     titulo: "Sabor local",
-    descripcion: "Del barrio para el barrio, en Puente Piedra. Sin vueltas, sin letra chica.",
+    descripcion: "Del barrio para el barrio. Sin vueltas, sin letra chica.",
   },
 ];
 

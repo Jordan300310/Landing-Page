@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="container-ancho grid gap-10 px-4 py-12 sm:py-16 lg:min-h-[82vh] lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-6 lg:py-20">
         <div className="relative z-10 lg:pr-6">
           <p className="text-etiqueta font-semibold uppercase tracking-etiqueta text-rojo-oscuro">
-            Hamburguesas y broaster en Puente Piedra
+            Comida rápida hecha al momento
           </p>
 
           <h1 className="mt-3 text-hero font-display text-carbon">
@@ -22,8 +22,8 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 max-w-md text-cuerpo text-carbon/80">
-            Hamburguesas jugosas y pollo broaster recién preparado, hechos al momento. Sin vueltas: pides por
-            WhatsApp y lo tienes listo en tu mesa favorita del barrio.
+            Tus antojos favoritos, recién preparados y con mucho sabor. Sin vueltas: pides por WhatsApp y lo
+            tienes listo para disfrutar.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">

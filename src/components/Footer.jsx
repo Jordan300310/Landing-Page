@@ -25,7 +25,7 @@ export default function Footer() {
             <span className="text-plato font-display text-lg text-crema">{negocio.nombre}</span>
           </Link>
           <p className="mt-4 max-w-xs text-sm text-crema/60">
-            Hamburguesas y pollo broaster hechos al momento, en Puente Piedra. Pide directo por WhatsApp.
+            Comida rápida hecha al momento, con variedad y mucho sabor. Pide directo por WhatsApp.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function Footer() {
 
       <div className="border-t border-crema/10">
         <p className="container-ancho px-4 py-4 text-xs text-crema/40">
-          © {anio} {negocio.nombre} · Puente Piedra, Lima
+          © {anio} {negocio.nombre} · Todos los derechos reservados
         </p>
       </div>
     </footer>
