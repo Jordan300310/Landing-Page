@@ -1,7 +1,7 @@
 import { negocio } from "../data/negocio";
 
-export function enlaceWhatsapp(mensaje) {
-  return `https://wa.me/${negocio.whatsapp.numero}?text=${encodeURIComponent(mensaje)}`;
+export function enlaceWhatsapp(mensaje, numero = negocio.whatsapp.numeros[0].numero) {
+  return `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 }
 
 export function enlacePedido(nombreProducto) {

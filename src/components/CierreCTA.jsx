@@ -1,8 +1,8 @@
-import { negocio } from "../data/negocio";
 import { IconoWhatsapp } from "./iconos";
 import { IlustracionBroaster } from "./ilustraciones/Comida";
 import Sello from "./Sello";
 import Reveal from "./Reveal";
+import BotonWhatsapp from "./BotonWhatsapp";
 
 export default function CierreCTA() {
   return (
@@ -16,15 +16,15 @@ export default function CierreCTA() {
           <p className="mt-4 max-w-md text-cuerpo text-blanco/85">
             Escríbenos por WhatsApp y te confirmamos tu pedido al toque. Sin apps, sin esperas raras.
           </p>
-          <a
-            href={negocio.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-blanco px-8 py-4 text-lg font-semibold text-rojo shadow-[4px_4px_0_0_#1a1512] transition-transform hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#1a1512] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-rojo focus-visible:ring-blanco"
+          <BotonWhatsapp
+            mensaje="Hola, quiero hacer un pedido"
+            alinear="left"
+            envolturaClassName="mt-7"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-blanco px-8 py-4 text-lg font-semibold text-rojo shadow-[4px_4px_0_0_#1a1512] transition-transform hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#1a1512] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-rojo focus-visible:ring-blanco"
           >
             <IconoWhatsapp className="h-5 w-5" />
             Pedir por WhatsApp
-          </a>
+          </BotonWhatsapp>
         </Reveal>
 
         <div className="relative mx-auto flex justify-center sm:justify-end">

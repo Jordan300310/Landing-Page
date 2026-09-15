@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { negocio } from "../data/negocio";
 import { IconoInstagram, IconoFacebook, IconoWhatsapp } from "./iconos";
+import BotonWhatsapp from "./BotonWhatsapp";
 
 const enlaceFoco =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-mostaza rounded";
@@ -49,15 +50,14 @@ export default function Footer() {
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-etiqueta text-crema/40">Contacto</p>
           <div className="mt-3 flex flex-col gap-2 text-sm">
-            <a
-              href={negocio.whatsapp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 hover:text-crema ${enlaceFoco}`}
+            <BotonWhatsapp
+              mensaje="Hola, quiero hacer un pedido"
+              alinear="left"
+              className={`inline-flex items-center gap-2 text-crema/80 hover:text-crema ${enlaceFoco}`}
             >
               <IconoWhatsapp className="h-4 w-4" />
               WhatsApp
-            </a>
+            </BotonWhatsapp>
             <a
               href={negocio.instagram}
               target="_blank"

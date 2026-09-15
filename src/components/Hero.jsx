@@ -3,6 +3,7 @@ import { negocio } from "../data/negocio";
 import { IconoWhatsapp, IconoReloj, IconoBilletera } from "./iconos";
 import { IlustracionHamburguesa } from "./ilustraciones/Comida";
 import Sello from "./Sello";
+import BotonWhatsapp from "./BotonWhatsapp";
 
 const botonFoco =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-rojo-oscuro";
@@ -26,15 +27,14 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <a
-              href={negocio.whatsapp.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BotonWhatsapp
+              mensaje="Hola, quiero hacer un pedido"
+              alinear="left"
               className={`inline-flex items-center justify-center gap-2 rounded-full bg-rojo px-7 py-3.5 font-semibold text-blanco shadow-[4px_4px_0_0_#1a1512] transition-transform hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#1a1512] ${botonFoco}`}
             >
               <IconoWhatsapp className="h-5 w-5" />
               Pedir por WhatsApp
-            </a>
+            </BotonWhatsapp>
 
             <Link
               to="/carta"

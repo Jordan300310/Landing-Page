@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { negocio } from "../data/negocio";
 import { IconoUbicacion, IconoReloj, IconoWhatsapp, IconoCheck } from "../components/iconos";
-import { enlaceWhatsapp } from "../lib/whatsapp";
 import { estaAbierto } from "../lib/horario";
+import BotonWhatsapp from "../components/BotonWhatsapp";
 
 export default function UbicacionPage() {
   const [abierto, setAbierto] = useState(() => estaAbierto(negocio.horario));
@@ -71,15 +71,14 @@ export default function UbicacionPage() {
               >
                 Cómo llegar
               </a>
-              <a
-                href={enlaceWhatsapp("Hola, quisiera hacer una consulta")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <BotonWhatsapp
+                mensaje="Hola, quisiera hacer una consulta"
+                alinear="left"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-carbon px-6 py-3 font-semibold text-carbon transition-colors hover:bg-carbon hover:text-crema focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-rojo-oscuro"
               >
                 <IconoWhatsapp className="h-4 w-4" />
                 Consultar por WhatsApp
-              </a>
+              </BotonWhatsapp>
             </div>
           </div>
 

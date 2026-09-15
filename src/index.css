@@ -12,6 +12,7 @@
 
   --font-display: "Alfa Slab One", serif;
   --font-sans: "Figtree", sans-serif;
+  --font-hand: "Caveat Brush", cursive;
 
   --text-hero: clamp(2.75rem, 9vw, 5.5rem);
   --text-hero--line-height: 0.95;
@@ -75,6 +76,88 @@
     background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
     pointer-events: none;
+  }
+
+  .carta-fondo {
+    position: relative;
+    isolation: isolate;
+    background-color: #f7eedd;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(227, 166, 47, 0.13), transparent 27rem),
+      radial-gradient(circle at 92% 38%, rgba(122, 12, 16, 0.07), transparent 34rem),
+      radial-gradient(circle at 18% 76%, rgba(227, 166, 47, 0.1), transparent 30rem),
+      repeating-linear-gradient(97deg, transparent 0 16px, rgba(87, 60, 39, 0.018) 17px 18px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+    background-blend-mode: multiply, multiply, multiply, normal, soft-light;
+  }
+
+  .carta-panel {
+    overflow: clip;
+    background-image:
+      linear-gradient(105deg, rgba(255, 255, 255, 0.2), transparent 42%),
+      repeating-linear-gradient(0deg, transparent 0 7px, rgba(74, 48, 29, 0.018) 8px);
+  }
+
+  .menu-liston {
+    isolation: isolate;
+    background-image:
+      linear-gradient(110deg, rgba(255, 255, 255, 0.09), transparent 28%, rgba(56, 0, 0, 0.12)),
+      repeating-linear-gradient(95deg, transparent 0 18px, rgba(0, 0, 0, 0.035) 19px 20px);
+  }
+
+  .menu-liston::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 32px;
+    height: 32px;
+    background: #eee0c8;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    filter: drop-shadow(-2px -2px 0 rgba(26, 21, 18, 0.35));
+  }
+
+  .grupo-plato {
+    position: relative;
+  }
+
+  .grupo-plato:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(26, 21, 18, 0.18), rgba(26, 21, 18, 0.04));
+  }
+
+  .foto-carta {
+    filter: drop-shadow(0 18px 22px rgba(67, 37, 19, 0.18));
+    transition: transform 260ms ease, filter 260ms ease;
+  }
+
+  .foto-carta:hover {
+    transform: rotate(0deg) translateY(-4px);
+    filter: drop-shadow(0 23px 25px rgba(67, 37, 19, 0.24));
+  }
+
+  .sello-foto {
+    background-image: radial-gradient(circle, transparent 48%, rgba(196, 22, 28, 0.14) 50% 56%, transparent 58%);
+  }
+
+  .separador-carta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(122, 12, 16, 0.36);
+  }
+
+  .separador-carta::before,
+  .separador-carta::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background-image: linear-gradient(90deg, transparent, rgba(122, 12, 16, 0.24), transparent);
   }
 
   .revelar {

@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { negocio } from "../data/negocio";
+import { enlaceWhatsapp } from "../lib/whatsapp";
 import { IconoWhatsapp, IconoMenu, IconoCerrar } from "./iconos";
+import BotonWhatsapp from "./BotonWhatsapp";
+
+const MENSAJE_GENERICO = "Hola, quiero hacer un pedido";
 
 const enlaceFoco =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-rojo-oscuro";
@@ -79,15 +83,13 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={negocio.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <BotonWhatsapp
+            mensaje={MENSAJE_GENERICO}
             className={`hidden shrink-0 items-center gap-2 rounded-full bg-rojo px-4 py-2 text-sm font-semibold text-blanco transition-colors hover:bg-rojo-oscuro sm:inline-flex ${enlaceFoco}`}
           >
             <IconoWhatsapp className="h-4 w-4" />
             Pedir por WhatsApp
-          </a>
+          </BotonWhatsapp>
 
           <button
             type="button"
@@ -133,15 +135,21 @@ export default function Nav() {
               </NavLink>
             ),
           )}
-          <a
-            href={negocio.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-rojo px-4 py-3 text-base font-semibold text-blanco ${enlaceFoco}`}
-          >
-            <IconoWhatsapp className="h-4 w-4" />
+          <p className="mt-3 px-3 text-[11px] font-semibold uppercase tracking-etiqueta text-carbon/50">
             Pedir por WhatsApp
-          </a>
+          </p>
+          {negocio.whatsapp.numeros.map((linea) => (
+            <a
+              key={linea.numero}
+              href={enlaceWhatsapp(MENSAJE_GENERICO, linea.numero)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-rojo px-4 py-3 text-base font-semibold text-blanco ${enlaceFoco}`}
+            >
+              <IconoWhatsapp className="h-4 w-4" />
+              {linea.etiqueta} · {linea.numero.slice(-9)}
+            </a>
+          ))}
         </nav>
       </div>
     </header>

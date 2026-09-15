@@ -15,13 +15,16 @@ export const negocio = {
   horario: {
     apertura: "18:00",
     cierre: "00:00",
-    dias: "Todos los días",
-    texto: "6:00 p.m. – 12:00 a.m., todos los días",
+    dias: "Viernes a miércoles",
+    diasCerrados: [4],
+    texto: "Viernes a miércoles, 6:00 p.m. – 12:00 a.m. · Jueves cerrado",
   },
 
   whatsapp: {
-    numero: "51933283906",
-    url: "https://wa.me/51933283906?text=Hola%2C%20quiero%20hacer%20un%20pedido",
+    numeros: [
+      { etiqueta: "Línea 1", numero: "51971539116" },
+      { etiqueta: "Línea 2", numero: "51975844566" },
+    ],
   },
   telefonoFijo: null,
 
@@ -29,7 +32,7 @@ export const negocio = {
   facebook: "https://www.facebook.com/profile.php?id=61593051195868",
 
   delivery: {
-    disponible: false,
+    disponible: true,
     zonas: [],
   },
   appsDelivery: [],

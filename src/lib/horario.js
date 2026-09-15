@@ -1,10 +1,16 @@
 export function estaAbierto(horario, ahora = new Date()) {
   const partes = new Intl.DateTimeFormat("en-GB", {
     timeZone: "America/Lima",
+    weekday: "short",
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
   }).formatToParts(ahora);
+
+  const diasDeLaSemana = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  const diaActual = diasDeLaSemana[partes.find((parte) => parte.type === "weekday").value];
+
+  if (horario.diasCerrados?.includes(diaActual)) return false;
 
   const hora = Number(partes.find((p) => p.type === "hour").value);
   const minuto = Number(partes.find((p) => p.type === "minute").value);
